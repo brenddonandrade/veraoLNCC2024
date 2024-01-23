@@ -1,0 +1,13 @@
+# Intruducao a programacao de GPU usando o OpenACC
+
+	Facil de usar mais performance
+
+	E portavel
+
+	Mais performance e mais flexibilidade
+
+	Single source: um unico arquivo pode gerar binarios para a CPU e GPU
+
+	Incremental: pode ir incrementando aos poucos a paralelizacao
+
+	
