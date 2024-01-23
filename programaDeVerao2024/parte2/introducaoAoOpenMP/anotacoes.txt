@@ -1,0 +1,59 @@
+Curso de introducao ao OpenMP
+
+Memoria compartilhada -> OpenMP
+Memoria distribuida -> MPI
+
+Como vamos paralelizar?
+	Temos trabalhos e dados. Para parelizar vamos dividir este trabalho. Locais que podem ser dividos sem afetar o resultado. Sem dep√ndencia.
+
+	A divisao dos dados entre os trabalhadores (threads) no openMP gera mais trabalho. Entao, precisamos analisar para ver se vale paralelizacao.
+
+	
+Porque programacao paralela?
+	Hoje, quase tudo utiliza paralelismo. Mesmo que nao implementado no programa, o programa que roda este programa pode paralelizar o programa ao executa-lo.
+
+	Aplicacoes que requerem grande poder computacional e com grandes quatidades de informacao.
+	Exemplos:
+		- Bases de dados paralelos
+		- Mineracao de dados (data mining)
+		- Servicos de procura baseados na web
+		- Servicos associados a tecnologias multimidia e telecomunicacoes
+		- Computacao grafica e realidade virtual
+		- Diagnostico medico assistido por computador
+		- Gestao de grandes industrias e corporacoes
+
+			
+Lei de Amdahl
+	Tempo de execucao em um unico processador
+
+	Temos um fracao de codigo sequencial e outra paralelizavel
+
+	O tempo de melhora depende da parte sequencial e da parte paralela
+
+	
+OpenMP
+	E um modelo de programacao paralela mais usados hoje em dia
+	
+	Relativamente facil de usar
+
+	Aplicavel em C, C++ e Fortran
+
+
+Sintaxe Basica
+	Tipos e prototipos de funcoes no arquivo
+		#include <omp.h>
+	
+	A maioria das construcoes openMP sao diretivas de compilacao
+
+	Diretivas
+		Diretivas openMP
+			//cria uma regiao paralela . Define as variaveis privadas e compartilhadas entre as threads
+			#pragma omp parallel private(...) shared(...) 
+			{ // obrigatoriamente na linha de baixo 	
+
+			
+			// Apenas a a thread mais rapida executa
+			#pragma omp single
+			
+
+			}

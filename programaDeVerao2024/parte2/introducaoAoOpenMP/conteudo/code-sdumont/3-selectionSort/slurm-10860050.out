@@ -1,0 +1,4 @@
+Running on sdumont1378
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: *** STEP 10860050.0 ON sdumont1378 CANCELLED AT 2024-01-23T11:46:16 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 10860050 ON sdumont1378 CANCELLED AT 2024-01-23T11:46:16 DUE TO TIME LIMIT ***
