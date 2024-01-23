@@ -1,0 +1,121 @@
+Prog de verao LNCC
+
+Programacao em Shell Script - Escola Santos Dumont 2024
+Processo de Aprendizagem
+	Lembrando: o objetivo de um curso é transmitir um conhecimento entre uma pessoa com experiência para uma outra com menos experiência em um topico específico.
+
+	Durante o curso são utilizados materiais: ferramentas e casos de uso, para situações com escopo limitado e bem definido de maneira que o aprendiz possa se capacitar e se motivar a usar o aprendizado em situações gerais e complexas, se tornando uma pesosa mais experiente e com vontade de formar novos aprendizes.
+
+EXEMPLO SHELL SCRIPT
+	os de configuração:
+		~/.bashrc 				# ponto na frente indica que o arquivo é invisível (boba)
+		~/.profile				# ~ -> diretorio do usuario, um sinônimo para este dir
+	
+	os de trabalho:
+		$./meuShellScript_PV2024.sh [args]  	# uso classico	
+		$sbatch subterJobMPI_PV2024.sh		# uso em subcomputadores
+		$./rodarExperimento.sh	5		# uso classico com argumentos
+		$cat rodaExperimento.sh
+		
+	# funcao em shell
+	#!/usr/bin/bash function executionDrive() {
+		tempoProcFicticio="2"			# codigo morto<F2>
+		tempoProFicticio=${1:-"2"} 		# se passar parametro na execucao, vai a variavel tempo recebe este valor. Caso nao, sera o tempo padrao "2".
+		echo -e "em $PWD 0
+		comandoRUN="sleep  ${tempoProFicticio}"		# codigo morto, faco o codigo esperar o tempo passado no parametro
+		comandoRUN=meuSleep.exe ${tempoProFicticio}"
+		echo -e "linha de comando: " $comandoRUN "0	
+		eval $comandoRUN
+		echo $PATH
+		echo -e "0
+		PATH=$PATH:./
+		echo $PATH
+		eval $comandoRUN
+		echo -e "0
+	}
+	
+	| (pip): operador muito potente e usado demais 	
+		ao invez do conteudo sair na tela, sera o input de um segundo comando.
+		exemplo:
+			echo $PATH | sed 's/:/:\n/g'	
+			echo $PATH | sed 's/:/:\n/g' | wc -l
+	wc -l: conta as linhas que vai sair no terminal	
+		
+	which [comando]: aonde esta localizado o comando
+
+	ls -lh /usr/bin/ls: fala o quando o comando foi montado no sistema printado para visualizacao humana (-lh)
+	
+	Para nao ser necessario usar o "./" ao executar um programa shell, basta adicionar aonde estar o programa na variavel ambiente PATH
+		PATH=$PATH:(diretorio do programa)
+	
+	as variaveis exportadas (export) em um arquivo .sh vao se tornar variaveis ambiente se executarmos o arquivo shell usando source [arquivo.sh] [parametros (se necessario)]
+
+
+Descrição
+	
+	Executam da seguinte forma:
+		$./compilador.sh			# classica (mais utilizada) (. aqui é um sinonimo para o diretorio atual)
+		$. compialdor.sh			# executa da mesma forma que o source para a variavel ter validade global, se assim for declarada no script
+		$source compilador.sh			
+
+		
+	Para o caso do supercoputador:
+		Um programa rodando ou esperando para ser executador em um supercomputador é geralmente chamado de JOB
+		
+		Para esta utilizacao do supercomputador, sao necessarias algumas instrucoes especificas que definem a quantidade e a forma de utilizacao dos recursos que sao solicitados para a execucao de um programa.
+
+		JOB: quantidade de nucleos, quantidade de memoria, tempo estimado de processamento
+
+		O computador Santos Dumont usa um programa especifico de gerenciador de   JOBs chamado de SLURM. Este possui vários comandos em linha. Para solitar que um JOB seja executado é usado o comando sbatch
+
+		Por exemplo: sbatch sbterJobMPI.sh
+
+		'Subter um batch' é um nome classico da tarefa de submeter um pedido para execucao de um programa de supercomputador
+
+		!(comando ja usado): mostra como foi usado o comando e a sua saida no terminal
+
+		python3 -c "arquivo de programa python" 	# executa um programa com o conteudo passado. Serve para outras linguagens como bash
+
+		bash -c "conteudo do programa bash" 
+
+		Um shell script é um programa com muita semelhanca com programas da linguagem C:
+	
+			1. Uso de variaveis escalares e vetores (arrays)
+
+			2. Entrada e saida
+			
+			3. Operacoes aritiméticas, relacionais e logicas
+	
+			4. Estruturas de controle de fluxo 
+
+	Note: UM SHELL SCRIPT É UM PROGRAMA
+
+		Um programa é um arquivo na memoria ou no disco
+
+		Um arquivo possui atributos de permições
+
+	Comandos:
+		Instrucoes dadas ao sistema operacional através do teclado na linha de comando
+		
+		O local do terminal onde se inicia a digitacao do comando é chamado de PROMPT e geralmente inicia com o simbolo $
+		
+		Comando sao acionados por um nome e possuem um funcionamento basico
+
+		exemplo: ls
+
+		POdem ser seguidos de parametros e argumentos que modificam o funcionamento básico
+
+		exemplo: ls -ltr
+
+			- l -> longo
+			- t -> ordena os arquivos em ordem temporal de modificacao
+			- r ->  de tras pra frente
+
+			date 				# sem parametros ou argumentos
+			date -u (parametro) +%s	(arg)	# com parametro e argumento
+			
+			teste
+
+
+
+

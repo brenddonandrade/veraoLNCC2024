@@ -1,0 +1,694 @@
+.TH ShellScript 1 "jan2024" "1.0" "prog verão LNCC"
+
+.SH Programação em Shell Script - Escola Santos Dumont 2024 
+
+.SH PROCESSSO De APRENDIZAGEM
+
+    Lembrando: o objetivo de um curso é transmitir um conhecimento entre uma pessoa com experiência para uma outra com menos experiência em um topico expecifico.
+
+    Durante o curso são utilizados materiais: ferramentas e casos de uso, para situações com escopo limitado e bem definido de maneira que o aprendiz possa se capacitar e se motivar a usar o aprendizado em situações gerais e complexas, se tornando uma pessoa mais experiente e com vontade de formar novos aprendizes.
+
+.SH EXEMPLOS SHELL SCRIPRT
+
+.B os de configuração:
+   ~/.bashrc
+   ~/.profile
+
+.B os de trabalho:
+ $./meuShellScript_PV2024.sh [\fIargs\fR]     # uso classico 
+ $sbatch submeterJobMPI_PV2024.sh     # uso em subcomputadores 
+ $./rodarExperimento.sh 5                     # uso classico com argumentos 
+ $cat rodarExperimento.sh
+
+#!/usr/bin/bash
+function executionDrive(){ 
+  tempoProcFiciticio="2"                           #codigo morto
+  tempoProcFiciticio=${1:-"2"}
+  echo -e "em $PWD \n"
+  comandoRUN="sleep        ${tempoProcFiciticio}"  #codigo morto
+  comandoRUN="meuSleep.exe ${tempoProcFiciticio}"
+  echo -e "linha de comando: " $comandoRUN "\n"
+  eval $comandoRUN  
+  echo $PATH
+  echo -e "\n\n\n"
+  PATH=$PATH:./
+  echo $PATH
+  eval $comandoRUN  
+  echo -e "\n\n\n"
+}
+
+main(){
+  dataInicio=$(date)
+    start_time="$(date -u +%s)"
+      executionDrive $@
+      end_time="$(date -u +%s)"
+  dataFinal=$(date)
+
+  echo repetindo a apresentação do comando:
+  echo -e $comandoRUN "\n"
+  elapsed="$(($end_time-$start_time))"
+  echo "Total of $elapsed seconds elapsed"
+  echo " +++ inicio dA rodada: $dataInicio"
+  echo " +++ fim .. dA rodada: $dataFinal "
+  echo -e "\n\n\n"
+  return
+}
+
+main $@
+
+.SH DESCRIÇÃO
+
+Uma sequência de \n comandos do sistema operacional colocados em um arquivo de texto, para realizar tarefas frequentes 
+
+ Geralmente possuem nome com terminação .sh
+.br
+por exemplo: compilar.sh
+
+ Executam da seguinte forma:
+
+   $./compilar.sh         # classica normal
+   $. compilar.sh         # para variavel de ambiente ter validade global
+   $source compilar.sh    # para variavel de ambiente ter validade global
+
+ Para o caso do supercomputador:
+
+ Um programa rodando ou esperando para ser executado em um supercomputador é geralmente chamado de JOB.
+
+ Para esta utilização do supercomputador, são necessarias algumas instruções
+   especificas que definem a quantidade e a forma de utilização dos recursos
+   que são solicitados para execução de um programa, JOB:\n
+   quantidade de nucleos, quantidade de memoria, tempo estimado de processamento
+
+ O computador Santos Dumont usa um programa especifico do gerenciador 
+   de JOBs chamado: SLURM, que possui varios comandos em linha.
+   Para solitar que um JOB seja executado é usado o comando: sbatch
+
+   Por exemplo: sbatch submeterJobMPI.sh
+
+  'Submeter em batch' é um nome classico da tarefa de submeter um pedido  
+  para execução de um programa no supercomputador, sem o usuario estar iteragindo
+  durante a execução.
+
+.SH Voltando a shell script 
+
+ Um shell script é um programa com muita semelhança com programas da linguagem C: 
+
+.TP
+ 1. Uso de variaveis escalares e vetores (arrays)
+.TP
+ 2. Entrada e saida, 
+.TP
+ 3. Operacoes aritimeticas, relacionais e logicas, 
+.TP
+ 4. Estruturas de controle de fluxo: laço, desvio, conrolado (for, if, case) 
+.TP
+ 5. Modularização com funções e arquivos separados 
+
+.TP
+ Não é compilado como em C e sua execução é feita atraves\
+ de um programa que faz a interpretação dos comandos, \
+ chamado de shell, como em python, perl. 
+   exemplo de um interpretador: bash  
+   está no diretorio: /usr/bin 
+
+.TP
+ O interpretador de comandos funciona de forma implicita no terminal\
+   de comandos, e pode funcionar de forma explicita para o usuárioo.
+
+   em forma de comandos, não de shell scripts
+
+.B   implicitamente:
+     $ls -ltr
+ 
+.B   explicitamente:
+     $bash -c "ls -ltr"
+
+     Esta forma explicita pode ser comparada com uma forma de utilização 
+ da linguagem Python, que é uma linguagem interpretada como o shell script
+
+     $python -c "print(2+3)"
+     $python -c "A=2;B=3;print(A,"+",B,"=",A+B);"  3 3 instruções em uma mesma linha
+
+.TP
+ Os arquivos de shell script Iniciam com uma linha especificando o interpretador de comandos, embora não seja obrigatorio em muitos casos 
+#!/usr/bin/bash 
+
+.SH NOTE: UM SHELL SCRIPT É UM PROGRAMA
+
+.TP
+Um programa é um arquivo na memoria ou no disco
+.TP
+Um arquivo possui artributos e permissões
+exemplo de atributos:
+ nome, data de alteração, tamanho em bytes, dono e permissões o: escrita, leitura, execução
+
+por exemplo:
+-rwxrwxrwx 1 bidu bidu     82 Jan 17 17:02 compilar.sh
+
+
+.TP
+No computador Santos Dumont shell script terá mais uma utilização que é um script de configuração de job de submissão através do programa de gerencia e uso do supercomputador chamado SLURM
+
+	sbatch submeterJobMPI_PV2024.sh
+
+.SH COMANDOS:
+
+ Instruções dadas ao sistema operacional através do teclado na linha de comando
+ 
+ O local do terminal onde se inicia a digitação do comando é chamado de PROMPT e geralmente inicial com o simbolo $
+
+ Comando são acionados por um nome e possuem um funcionamento basico
+
+ exemplo: ls
+
+ Podem ser seguidos de parametros e argumentos que modificam o funcionamento basico
+
+ exemplo: ls -ltr
+
+ Alguns não exigem parametros nem argumentos:
+
+   ls, pwd, cd, date, tree, echo, hostname
+
+ mas podem usar:
+
+   ls                  : lista o conteudo do diretorio atual
+             mostra arquivos e diretorios
+   ls -l               : lista o conteudo do diretorio atual
+             no formato longo mostrando atributos e permissões
+   hostname            : mostra o nome da maquina
+   hostname -i         : mostra o endereço ip
+
+ Outros exigem parametros e argumentos:
+   file, cat, size, wc, touch, chmod, less, head, tail,
+   time
+
+   sleep 2                        # executa um programa sem consumo de recurso computacional 
+   date                           # mostra informacoes sobre o tempo:dia,mes,ano,hora
+   date -u +%s                    # mostra informação sobre tempo em segundos  
+   wc    aloMPI.c                 #mostra o numero de linhas, palavras e caracteres
+   wc -l aloMPI.c                 #mostra o numero de linhas
+   wc -w aloMPI.c                 #mostra o numero de palavras
+   cat   aloMPI.c                 #mostra o conteudo do todo o arquivo
+   cat -n  aloMPI.c               #mostra o conteudo do todo o arquivo incluindo os numeros das linhas
+   head      aloMPI.c             #mostra as 10    primeiras linhas do arquivo
+   head -n 2 aloMPI.c             #mostra as duas  primeiras linhas do arquivo
+   tail      aloMPI.c             #mostra as dez   ultimas linhas do arquivo
+   tail -n 2 aloMPI.c             #mostra as duas  ultimas linhas do arquivo
+   mkdir    verao2024             #cria um diretorio com o nome verao2024 e     da erro se existir
+   mkdir -p verao2024             #cria um diretorio com o nome verao2024 e não da erro se existir
+   mv compilar.sh ../verao2024
+   mv aloMPI.c    ../verao2024
+   cd  verao2024
+   grep    mpi aloMPI.c           #mostra as linha onde ocorrem a  palavra  'mpi' 
+   grep -i mpi aloMPI.c           #mostra as linha onde ocorrem as palavras 'mpi' e 'MPI'
+
+ O comando 'man  ls', exibe paginas de manual deste comando
+
+ O comando 'info ls', exibe paginas de manual deste comando
+
+ O nome comando seguido de '--help' mostra uma lista de parametros que modificam o
+    funcionamento do comando
+
+ Os comandos podem ser classificados como:
+   internos (built in): programas cujo o arquivo estão na memoria principal: RAM
+    por exemplo: ls, cd
+   externos:            programas cujo o arquivo estão em memoria secundaria: disco
+    por exemplo: file, cat, bash
+
+  Em comando externos o sistema precisa saber onde se localizam de forma explicita
+          isso é feito usando a variavel PATH
+
+          PATH contem uma lista de diretorios onde o sistema procura pelos comandos
+
+          $echo $PATH    : este comando mostra o conteudo da variavel
+
+
+/home/bidu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/snap/bin:./
+
+
+          $which cat     : mostra o diretorio onde o arquivo se encontra
+
+          /usr/bin/cat
+
+          $export PATH=$PATH:~/meusScripts
+
+          $echo $PATH    
+
+/home/bidu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/snap/bin:~/meusScripts
+
+         Programas executaveis: podem ser arquivos compilados ou shell scripts que possuem o atributo de execução ligados
+
+        $ls -ltr |tail -2
+        -rw-rw-rw- 1 bidu bidu     77 Jan 21 16:36 aloSD.c
+        -rw-rw-rw- 1 bidu bidu     77 Jan 21 14:37 compilar.sh
+
+        $cat -n compilar.sh
+
+     	1  #!/usr/bin/bash
+     	2  gcc -c aloSD.c
+     	3  gcc    aloSD.o -o aloSD.exe
+
+        Modificar o atributo do arquivo compilar.sh para torná-lo executavel
+
+        $chmod +x compilar.sh
+
+        $ls -ltr |tail -2
+        -rw-rw-rw- 1 bidu bidu     77 Jan 21 16:36 aloSD.c
+        -rwxrwxrwx 1 bidu bidu     77 Jan 21 14:37 compilar.sh
+         
+        Executar um arquivo shell script, com o comando externo, com o atributo executavel:
+
+        $./compilar.sh
+
+        $ls -ltr |tail -2
+        -rw-rw-rw- 1 bidu bidu     77 Jan 21 16:36 aloSD.c
+        -rwxrwxrwx 1 bidu bidu     77 Jan 21 14:37 compilar.sh
+        -rwxrwxrwx 1 bidu bidu     77 Jan 21 16:38 aloSD.exe
+
+          executar um arquivo compilado, criado pelo compilador, gcc, com o comando externo,
+  com o atributo executavel:
+
+         $./aloSD.exe
+      
+         alo SDumont!
+
+.TP Shell script de configuração: .bashrc
+
+.SH  AMBIENTE
+
+.SH SISTEMA DE ARQUIVOS
+
+.SH DiRETORIOS
+
+ Diretorio ou pasta é uma estrutura de organização hierarquica dos arquivos locais nomeados
+
+ Hierarquica em camadas, um dentro do outro. 
+
+$du -h verao2024  
+.br
+36K     verao2024/expSD/scripts 
+.br
+0       verao2024/expSD/sequana 
+.br
+112K    verao2024/expSD 
+.br
+16K     verao2024/lib 
+.br
+496K    verao2024 
+.br
+
+ $tree -d verao2024
+
+verao2024
+.br
+├── expSD
+.br
+│   ├── scripts
+.br
+│   └── sequana
+.br
+└── lib
+.br
+
+4 directories
+
+   Dois diretorios especiais sem nome:
+   .       diretorio atual
+
+   ..      diretorio anterior 
+
+    o diretório verao2024 é anterior, é pai de expSD e lib
+
+    o diretório expSD é anterior, é pai de script e sequana 
+
+    São localizações, caminhos relativos a um outro diretorio
+
+    Um diretorio que inicia com '/' define um caminho absoluto, não 
+ possui pai  
+
+.SH
+ Comunicação entre comandos com o operador | , pipe
+
+.TP
+ Comando executados em sequencia. A saida do do primeiro é a entrada para o segundo 
+
+$du -h verao2024 | sort -n
+.br
+0       verao2024/expSD/sequana
+.br
+16K     verao2024/lib
+.br
+36K     verao2024/expSD/scripts
+.br
+112K    verao2024/expSD
+.br
+496K    verao2024
+.br
+
+ $ps -le | head -1
+ $ps -le | tail -8
+
+ xterm: é uma janela de interface com o sistema operacional
+    possui uma formatação de texto baseado na tabela ASCII
+    está ligada diretamente ao teclado e mouse
+    abriga o interpretador de comandos: /usr/bin/bash
+
+.SH
+ VARIÁVEIS LOCAIS
+
+   A=10
+   numLinhas="wc -l expMPI.c" 
+
+  o simbolo $ na frente do nome permite acessar o conteudo
+  echo A=$A
+  echo numLinhas=$numLinhas
+
+   predefinidas 
+   por exemplo:
+     $$ PID -> numero do processo
+     !$ argumento do ultimo comando
+     $? codigo de erro retornado do ultimo comando 
+
+   dentro dos shell scripts
+   vindas da linha de comando na execução: $1, $2, ...
+   
+   podem ser passadas para os shell scripts por argumento na linha de comando
+     estas possuem nomes que usam digitos numericos: $1, $2, $3
+
+   cat soma.sh
+  #!/usr/bin/bash
+  A=${1:-"7"}
+  B=${2:-"5"}
+  echo $A + $B "=" $((A+B)) 
+  echo $B + $A "=" $((B+A)) 
+
+3.3 Utilização
+  para alterar o conteudo o simbolo não é utilizado
+  export PATH=$PATH:~/meusScripts
+
+1.2 Variaveis de ambiente: servem para configurar o funcionamento do sistema
+
+   SHELL 
+   USER, PWD, HOME, SCRATCH
+   PATH, PS1, LIBRARY_PATH, LD_LIBRARY_PATH
+   DISPLAY
+   PID, PPID 
+
+    São atribuidas usando o comando 'export'
+
+    $export PATH=$PATH:~/meusScripts
+    $export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ ' 
+
+ Uso em um script de compilação de programa:
+
+    $cat -n compilarC.sh
+.br
+	1 #!/usr/bin/bash
+.br
+	2 gcc -c aloC.c 
+.br
+	3 gcc -c escreverMSG.c -fpic
+.br
+	3 gcc -c lerMSG.c      -fpic
+.br
+	4 gcc -shared -o lib/libBD.so escreverMSG.o lerMSG.o
+.br
+	5 gcc  aloC.o     -lBD -o aloC.exe
+
+    $./compilarB.sh 
+.br
+/usr/bin/ld: cannot find -lBD
+.br
+collect2: error: ld returned 1 exit status
+
+    $export  LIBRARY_PATH=/mnt/c/Users/bidu/OneDrive/aLncc/aCursoProgramacao/verao2024/lib
+.br
+    $./compilarB.sh 
+.br
+    $./aloSD.exe
+.br
+./aloSD.exe: error while loading shared libraries: libBD.so: cannot open shared object file: No such file or directory
+.br
+    $export LD_LIBRARY_PATH=/mnt/c/Users/bidu/OneDrive/aLncc/aCursoProgramacao/verao2024/lib
+.br
+    $./aloC.exe
+.br
+Ola C!!!
+.br
+Sun Jan 21 21:13:16 -03 2024
+.br
+/mnt/c/Users/bidu/OneDrive/aLncc/aCursoProgramacao/verao2024
+.br
+pc013047
+.br
+
+    $export PATH=$PATH:./
+.br
+    $compilarC.sh && aloC.exe
+.br
+    $nm -D -l lib/libBD.so --print-file-name
+.br
+lib/libBD.so:                 w _ITM_deregisterTMCloneTable
+.br
+lib/libBD.so:                 w _ITM_registerTMCloneTable
+.br
+lib/libBD.so:                 w __cxa_finalize
+.br
+lib/libBD.so:                 w __gmon_start__
+.br
+lib/libBD.so:0000000000001119 T escreverMSG
+.br
+lib/libBD.so:0000000000001130 T lerMSG
+.br
+lib/libBD.so:                 U puts
+.br
+
+    O uso de shell script pode tornar uma tarefa mais segura por permitir
+ incluir etapas que não seriam usadas se não fosse de forma automatica
+    $cat -n compilarD.sh
+.br
+    1. #!/usr/bin/bash
+.br
+    2. nomeFonteMain=aloC
+.br
+    3. rm $nomeFonteMain.exe *.o lib/*
+.br
+    4. gcc -c $nomeFonteMain.c
+.br
+    5. gcc -pic -c escreverMSG.c -fpic
+.br
+    6. gcc -pic -c lerMSG.c ; if [ $? -eq 0 ];  then echo " criado: lerMSG.o "; else echo "erro em lerMSG.c"; fi
+.br
+    7. gcc -shared -o lib/libBD.so escreverMSG.o lerMSG.o \
+.br
+    8.  && gcc  $nomeFonteMain.o     -lBD -o $nomeFonteMain.exe
+.br
+
+.SH VOLTANDO AO EXEMPLO INICIAL 
+
+#!/usr/bin/bash
+function executionDrive(){ 
+  tempoProcFiciticio="2"                           #codigo morto
+  tempoProcFiciticio=${1:-"2"}
+  echo -e "em $PWD \n"
+  comandoRUN="sleep        ${tempoProcFiciticio}"  #codigo morto
+  comandoRUN="meuSleep.exe ${tempoProcFiciticio}"
+  echo -e "linha de comando: " $comandoRUN "\n"
+  eval $comandoRUN  
+  echo $PATH
+  echo -e "\n\n\n"
+  PATH=$PATH:./
+  echo $PATH
+  eval $comandoRUN  
+  echo -e "\n\n\n"
+}
+
+main(){
+  dataInicio=$(date)
+    start_time="$(date -u +%s)"
+      executionDrive $@
+      end_time="$(date -u +%s)"
+  dataFinal=$(date)
+
+  echo repetindo a apresentação do comando:
+  echo -e $comandoRUN "\n"
+  elapsed="$(($end_time-$start_time))"
+  echo "Total of $elapsed seconds elapsed"
+  echo " +++ inicio dA rodada: $dataInicio"
+  echo " +++ fim .. dA rodada: $dataFinal "
+  echo -e "\n\n\n"
+  return
+}
+
+main $@
+
+.SH outro exemplo de script com laços e desvios
+
+#!/bin/bash
+while true
+do
+        read -p "insira um Numero: " numero
+	echo numero lido: $numero
+        if [[ $((numero % 2)) -eq 0 && $numero -lt 100 ]]
+        then
+                continue
+        fi
+        if [[ $((numero % 2)) -eq 0 && $numero -gt 100 ]]
+        then
+                echo $numero
+                continue
+        fi
+        if [ $((numero % 2)) -ne 0 ]
+        then
+                echo $((numero * 2))
+                continue
+        fi
+        if [ $numero -eq 100 ]
+        then
+                break
+        fi
+done 
+
+.SH scripts do SANTOS DUMONT 
+
+$cat submit_expMPI01.sh
+.br
+#!/bin/bash
+.br
+#SBATCH --nodes=1                  #Número de Nós
+.br
+#SBATCH --ntasks=4                 #Numero total de tarefas MPI
+.br
+#SBATCH -p sequana_cpu_shared      #Fila (partition) a ser utilizada
+.br
+#SBATCH -J expMPI01                #Nome job
+.br
+#SBATCH --time=00:20:00            #Obrigatório
+.br
+#SBATCH --mem 1000000000000000000
+.br
+
+.br
+   echo "linha de coomando de submissão: $0 $@"
+.br
+   if [[ -z "${SLURM_NTASKS}" ]]; then export SLURM_NTASKS=${1:-"7"} ; fi
+.br
+   echo SLURM_NTASKS=$SLURM_NTASKS
+.br
+
+.br
+   echo $comando; eval $comando
+.br
+   EXEC_NAME=expMPI
+.br
+   EXEC_DIR=.
+.br
+   executable=$EXEC_DIR/$EXEC_NAME
+.br
+   
+.br
+   comando="module load sequana/current"
+.br
+   echo $comando; eval $comando
+.br
+   comando="module load openmpi/gnu/4.1.4_sequana"
+.br
+   echo $comando; eval $comando
+.br
+
+.br
+   SLURM_SUBMIT_DIR=$PWD
+.br
+   cd  $SLURM_SUBMIT_DIR
+.br
+   echo SLURM_SUBMIT_DIR=$SLURM_SUBMIT_DIR 
+.br
+   comandoRUN="mpirun -n ${SLURM_NTASKS} $executable"
+.br
+   comandoRUN="srun $executable"
+.br
+   echo $comandoRUN; eval $comandoRUN
+.br
+
+
+
+$cat submit_expMPI05.sh
+.br
+#!/bin/bash
+.br
+#SBATCH --nodes=1                  #Número de Nós
+.br
+#SBATCH --ntasks=4                 #Numero total de tarefas MPI
+.br
+#SBATCH -p sequana_cpu_shared      #Fila (partition) a ser utilizada
+.br
+#SBATCH -J expMPI05                #Nome job
+.br
+#SBATCH --time=00:20:00            #Obrigatório
+.br
+#SBATCH --mem 1000000000000000000
+.br
+
+function settings(){
+.br
+   echo "linha de coomando de submissão: $0 $@"
+.br
+   if [[ -z "${SLURM_NTASKS}" ]]; then export SLURM_NTASKS=${1:-"7"} ; fi
+.br
+   echo SLURM_NTASKS=$SLURM_NTASKS
+.br
+   comando="export USER_PATH=/scratch/cenapadrjsd/eduardo.garcia2"
+.br
+   echo $comando; eval $comando
+.br
+   EXEC_NAME=expMPI
+.br
+   EXEC_DIR=.
+.br
+   executable=$EXEC_DIR/$EXEC_NAME
+.br
+   return 
+.br
+}
+   
+modulesLoad(){
+   comando="module load sequana/current"
+   echo $comando; eval $comando
+   comando="module load openmpi/gnu/4.1.4_sequana"
+   echo $comando; eval $comando
+   return 
+.br
+}
+
+executionDrive(){
+   SLURM_SUBMIT_DIR=$PWD
+   cd  $SLURM_SUBMIT_DIR
+   echo SLURM_SUBMIT_DIR=$SLURM_SUBMIT_DIR 
+   comandoRUN="srun $executable"
+   echo $comandoRUN; eval $comandoRUN
+   return 
+.br
+}
+
+   
+main(){
+  dataInicio=$(date)
+  start_time="$(date -u +%s)"
+   settings $@
+   modulesLoad
+   executionDrive
+  end_time="$(date -u +%s)"
+  dataFinal=$(date)
+
+  echo -e "$PWD \n"
+  echo repetindo a apresentação do comando:
+  echo -e $comandoRUN "\n"
+  elapsed="$(($end_time-$start_time))"
+  echo "Total of $elapsed seconds elapsed"
+  echo " +++ inicio dA simulacao: $dataInicio"
+  echo " +++ fim .. dA simulacao: $dataFinal "
+   return
+.br
+}
+
+ main $@
