@@ -10,4 +10,20 @@
 
 	Incremental: pode ir incrementando aos poucos a paralelizacao
 
+# OpenACC Development Cycle
+
+	- Analyse your code to determine most likely places needing parallelization or optimization
+
+	- Parallelize your code by starting with the most time consuming parts and check for correctness
+	
+	- Optimize your code to improve observed speed-up from parallelization
+
+	
+Profiling sequencial code
+	First sight when using PGPROF
+	
+	show where is have gargalos in the programa for the implement parallel pragram
+
+	
+	
 	

@@ -1,0 +1,9 @@
+Running on sdumont1359
+number of elements: 20 * 10E3
+sorted values are ok
+q_time: 0.031 seconds
+s_time: 54.040 seconds
+
+real	0m54.850s
+user	0m0.013s
+sys	0m0.008s
