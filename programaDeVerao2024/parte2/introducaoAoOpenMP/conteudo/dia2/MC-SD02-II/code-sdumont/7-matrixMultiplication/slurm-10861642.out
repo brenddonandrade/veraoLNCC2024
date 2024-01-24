@@ -1,0 +1,10 @@
+Running on sdumont1359
+mpsvars.sh: Warning: Hardware events collection is disabled by default. To enable it, run mpsvars.sh with --vtune (recommended) or --papi option.
+Copyright (C) 2009-2016 Intel Corporation. All rights reserved.
+Intel(R) Inspector XE 2016 (build 450824)
+Copyright (C) 2009-2015 Intel Corporation. All rights reserved.
+Intel(R) VTune(TM) Amplifier XE 2016 (build 444464)
+Copyright (C) 2009-2016 Intel Corporation. All rights reserved.
+Intel(R) Advisor XE 2016 (build 450722)
+slurmstepd: error: execve(): /scratch/uff21hpc/brenddon.oliveira/7-matrix-mult.exec: No such file or directory
+srun: error: sdumont1359: task 0: Exited with exit code 2

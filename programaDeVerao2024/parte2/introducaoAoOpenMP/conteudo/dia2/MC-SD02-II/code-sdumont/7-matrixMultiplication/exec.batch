@@ -13,6 +13,8 @@ cd $SLURM_SUBMIT_DIR
 
 #Configura os compiladores
 module load gcc/8.3
+source /scratch/app/modulos/intel-psxe-2016.sh
+module load openmpi/icc/2.0.4.2
 
 #Configura o executavel
 EXEC="$SCRATCH/7-matrix-mult.exec 2048"

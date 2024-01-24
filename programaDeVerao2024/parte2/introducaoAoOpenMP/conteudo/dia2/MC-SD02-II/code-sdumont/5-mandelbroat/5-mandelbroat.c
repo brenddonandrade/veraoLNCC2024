@@ -100,53 +100,56 @@ for a particular pixel.
 /*
 Carry out the iteration for each pixel, determining COUNT.
 */
-		for ( i = 0; i < m; i++ )
-		{
-			y = ( ( double ) (     i - 1 ) * y_max   
-				+ ( double ) ( m - i     ) * y_min ) 
-			/ ( double ) ( m     - 1 );
-
-			for ( j = 0; j < n; j++ )
+		// Talvez aqui seja um bom lugar para palalelizar
+		// Agora precisamos saber se os lacos sao dependentes
+		#pragma omp parallel for private(i, j, k, x, y, x1, y1, x2, y2, c) 	
+			for ( i = 0; i < m; i++ )
 			{
-				x = ( ( double ) (     j - 1 ) * x_max   
-					+ ( double ) ( n - j     ) * x_min ) 
-				/ ( double ) ( n     - 1 );
-
-				count[i][j] = 0;
-
-				x1 = x;
-				y1 = y;
-
-				for ( k = 1; k <= count_max; k++ )
+				y = ( ( double ) (     i - 1 ) * y_max   
+					+ ( double ) ( m - i     ) * y_min ) 
+				/ ( double ) ( m     - 1 );
+	
+				for ( j = 0; j < n; j++ )
 				{
-					x2 = x1 * x1 - y1 * y1 + x;
-					y2 = 2 * x1 * y1 + y;
+					x = ( ( double ) (     j - 1 ) * x_max   
+						+ ( double ) ( n - j     ) * x_min ) 
+					/ ( double ) ( n     - 1 );
+	
+					count[i][j] = 0;
+	
+					x1 = x;
+					y1 = y;
 
-					if ( x2 < -2.0 || 2.0 < x2 || y2 < -2.0 || 2.0 < y2 )
+					for ( k = 1; k <= count_max; k++ )
 					{
-						count[i][j] = k;
-						break;
-					}
-					x1 = x2;
-					y1 = y2;
-				}
+						x2 = x1 * x1 - y1 * y1 + x;
+						y2 = 2 * x1 * y1 + y;
 
-				if ( ( count[i][j] % 2 ) == 1 )
-				{
-					r[i][j] = 255;
-					g[i][j] = 255;
-					b[i][j] = 255;
-				}
-				else
-				{
-					c = ( int ) ( 255.0 * sqrt ( sqrt ( sqrt ( 
-						( ( double ) ( count[i][j] ) / ( double ) ( count_max ) ) ) ) ) );
-					r[i][j] = 3 * c / 5;
-					g[i][j] = 3 * c / 5;
-					b[i][j] = c;
+						if ( x2 < -2.0 || 2.0 < x2 || y2 < -2.0 || 2.0 < y2 )
+						{
+							count[i][j] = k;
+							break;
+						}
+						x1 = x2;
+						y1 = y2;
+					}
+
+					if ( ( count[i][j] % 2 ) == 1 )
+					{
+						r[i][j] = 255;
+						g[i][j] = 255;
+						b[i][j] = 255;
+					}
+					else
+					{
+						c = ( int ) ( 255.0 * sqrt ( sqrt ( sqrt ( 
+							( ( double ) ( count[i][j] ) / ( double ) ( count_max ) ) ) ) ) );
+						r[i][j] = 3 * c / 5;
+						g[i][j] = 3 * c / 5;
+						b[i][j] = c;
+					}
 				}
 			}
-		}
 
 	wtime = omp_get_wtime ( ) - wtime;
 	printf ( "\n" );
