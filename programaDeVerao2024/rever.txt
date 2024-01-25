@@ -1,0 +1,19 @@
+Para rever  - link para live
+
+	Minucursos
+		MC-SD01-II: Introdução E/S Paralela no SDUMONT - https://www.youtube.com/watch?v=T7IAa7hanxk&list=PL1JkuXNrkXKybpzUq1y_CkoVfkbpz-ReJ&index=19
+		MC-SD02-II: Introdução à Programação Paralela e Vetorial - https://www.youtube.com/watch?v=dytsDeUO5z
+		MC-SD02-III: Profiling e otimização em códigos C/C++ - https://www.youtube.com/watch?v=DBeSmkRqxeI
+		MC-SD04-I: Programação com MPI - https://www.youtube.com/watch?v=_qW6UcYrcFc&list=PL1JkuXNrkXKybpzUq1y_CkoVfkbpz-ReJ&index=26
+
+	
+	Secoes Tecnicas
+		Sessão Técnica (primeira) - https://www.youtube.com/watch?v=lYBsWxDgIEc&list=PL1JkuXNrkXKybpzUq1y_CkoVfkbpz-ReJ&index=7
+		
+		Sessão técnica (primeira) - https://www.youtube.com/watch?v=U7a4EzAf5ZA&list=PL1JkuXNrkXKybpzUq1y_CkoVfkbpz-ReJ&index=11
+
+	
+	Palestras
+		Além do Básico: Otimizando Aplicações Paralelas em Arquiteturas Modernas - https://www.youtube.com/watch?v=bmJSeTPLtcg&list=PL1JkuXNrkXKybpzUq1y_CkoVfkbpz-ReJ&index=21c
+
+		
