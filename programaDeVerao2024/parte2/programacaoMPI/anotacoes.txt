@@ -1,0 +1,29 @@
+
+
+	Speed-up
+		Nos diz como o codigo esta se comportando quando colocamos mais unidades de processamento.
+
+		S(n) = T(1)/T(n) , n = numero de threads
+
+
+	Eficiencia
+		E(n) = S(n)/n
+
+
+	Criacao de um programa paralelo
+		As tarefas de comunicacao e sincronizacao nao podem ser  mais complexas que as tarefas de computacao. Nos paralelizamos as tarefas de computacao.
+	
+		Um vez determinada a forma de particionamento das tarefas, os processos de theads devem ser mapeados para os processadores reais que existem no sistema
+
+		Para que isto seja feito de uma maneira eficiente, deve-se explorar ...
+
+		O particionamento de tarefas deve ter como objetivo a reducao de serielizacao no acesso aos recursos compartilhados.	
+
+		
+	Apresentacao do MPI
+		...
+
+		https:/www.mpi-forum.org/docs
+		
+	
+
