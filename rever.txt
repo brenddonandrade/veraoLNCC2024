@@ -5,6 +5,10 @@ Para rever  - link para live
 		MC-SD02-II: Introdução à Programação Paralela e Vetorial - https://www.youtube.com/watch?v=dytsDeUO5z
 		MC-SD02-III: Profiling e otimização em códigos C/C++ - https://www.youtube.com/watch?v=DBeSmkRqxeI
 		MC-SD04-I: Programação com MPI - https://www.youtube.com/watch?v=_qW6UcYrcFc&list=PL1JkuXNrkXKybpzUq1y_CkoVfkbpz-ReJ&index=26
+		
+		MC-SD04-III: AMPI Adaptive MPI - (link?)
+		
+		MC-SD05-I: Introdução a workflows científicos paralelos em Python/Parsl - (link?)
 
 	
 	Secoes Tecnicas

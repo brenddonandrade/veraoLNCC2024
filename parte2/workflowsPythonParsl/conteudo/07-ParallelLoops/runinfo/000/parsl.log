@@ -1,0 +1,92 @@
+1706278741.391146 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:91 __init__ INFO: Starting DataFlowKernel with config
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    executors=(ThreadPoolExecutor(
+        label='threads', 
+        max_threads=2, 
+        storage_access=None, 
+        thread_name_prefix='', 
+        working_dir=None
+    ),), 
+    garbage_collect=True, 
+    initialize_logging=True, 
+    internal_tasks_max_threads=10, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    retry_handler=None, 
+    run_dir='runinfo', 
+    strategy='simple', 
+    usage_tracking=False
+)
+1706278741.391341 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:93 __init__ INFO: Parsl version: 2024.01.22
+1706278741.391458 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.usage_tracking.usage:127 __init__ DEBUG: Tracking status: False
+1706278741.391568 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:121 __init__ INFO: Run id is: e504fb1d-aa41-4183-bd51-15f1cfa2c2b1
+1706278741.430632 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:128 __init__ DEBUG: Considering candidate for workflow name: /home/brenddon/.local/lib/python3.12/site-packages/parsl/dataflow/dflow.py
+1706278741.430741 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:128 __init__ DEBUG: Considering candidate for workflow name: /home/brenddon/.local/lib/python3.12/site-packages/typeguard/__init__.py
+1706278741.430792 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:128 __init__ DEBUG: Considering candidate for workflow name: /home/brenddon/.local/lib/python3.12/site-packages/parsl/dataflow/dflow.py
+1706278741.430833 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:128 __init__ DEBUG: Considering candidate for workflow name: /home/brenddon/.local/lib/python3.12/site-packages/typeguard/__init__.py
+1706278741.430872 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:128 __init__ DEBUG: Considering candidate for workflow name: /home/brenddon/Documents/lncc/programaDeVerao2024/parte2/workflowsPythonParsl/conteudo/07-ParallelLoops/07_parallelloops.py
+1706278741.430911 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:134 __init__ DEBUG: Using 07_parallelloops.py as workflow name
+1706278741.431070 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.memoization:163 __init__ INFO: App caching initialized
+1706278741.431132 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.jobs.strategy:143 __init__ DEBUG: Scaling strategy: simple
+1706278741.433858 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:949 submit DEBUG: Task 0 will be sent to executor threads
+1706278741.433973 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278741.434035 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1031 submit INFO: Task 0 submitted for App generate, not waiting on any dependency
+1706278741.434098 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1037 submit DEBUG: Task 0 set to pending state with AppFuture: <AppFuture at 0x7f0a43dcd790 state=pending>
+1706278741.434154 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.memoization:222 check_memo DEBUG: Task 0 will not be memoized
+1706278741.434467 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 0 try 0 launched on executor threads
+1706278741.434546 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:551 _complete_task INFO: Task 0 completed (launched -> exec_done)
+1706278741.434638 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:949 submit DEBUG: Task 1 will be sent to executor threads
+1706278741.434714 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278741.434768 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1031 submit INFO: Task 1 submitted for App generate, not waiting on any dependency
+1706278741.434824 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1037 submit DEBUG: Task 1 set to pending state with AppFuture: <AppFuture at 0x7f0a43caf530 state=pending>
+1706278741.434870 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.memoization:222 check_memo DEBUG: Task 1 will not be memoized
+1706278741.434933 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 1 try 0 launched on executor threads
+1706278741.435084 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:551 _complete_task INFO: Task 1 completed (launched -> exec_done)
+1706278741.435172 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:949 submit DEBUG: Task 2 will be sent to executor threads
+1706278741.435240 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278741.435294 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1031 submit INFO: Task 2 submitted for App generate, not waiting on any dependency
+1706278741.435348 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1037 submit DEBUG: Task 2 set to pending state with AppFuture: <AppFuture at 0x7f0a43caf620 state=pending>
+1706278741.435391 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.memoization:222 check_memo DEBUG: Task 2 will not be memoized
+1706278741.435451 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 2 try 0 launched on executor threads
+1706278741.435543 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:551 _complete_task INFO: Task 2 completed (launched -> exec_done)
+1706278741.435605 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:949 submit DEBUG: Task 3 will be sent to executor threads
+1706278741.435660 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278741.435719 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1031 submit INFO: Task 3 submitted for App generate, not waiting on any dependency
+1706278741.435768 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1037 submit DEBUG: Task 3 set to pending state with AppFuture: <AppFuture at 0x7f0a43caf7a0 state=pending>
+1706278741.435809 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.memoization:222 check_memo DEBUG: Task 3 will not be memoized
+1706278741.435864 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 3 try 0 launched on executor threads
+1706278741.435951 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:551 _complete_task INFO: Task 3 completed (launched -> exec_done)
+1706278741.436135 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1145 atexit_cleanup INFO: DFK cleanup because python process is exiting
+1706278741.436198 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1182 cleanup INFO: DFK cleanup initiated
+1706278741.436235 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1075 log_task_states INFO: Summary of tasks in DFK:
+1706278741.436291 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.unsched: 0
+1706278741.436338 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.pending: 0
+1706278741.436375 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.running: 0
+1706278741.436409 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.exec_done: 4
+1706278741.436443 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.failed: 0
+1706278741.436477 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.dep_fail: 0
+1706278741.436511 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.launched: 0
+1706278741.436544 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.fail_retryable: 0
+1706278741.436578 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.memo_done: 0
+1706278741.436611 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.joining: 0
+1706278741.436644 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.running_ended: 0
+1706278741.436694 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1081 log_task_states INFO: End of summary
+1706278741.436762 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1206 cleanup INFO: Closing job status poller
+1706278741.436889 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1208 cleanup INFO: Terminated job status poller
+1706278741.436930 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1210 cleanup INFO: Scaling in and shutting down executors
+1706278741.436971 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1228 cleanup INFO: Shutting down executor threads
+1706278741.437009 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.executors.threads:74 shutdown DEBUG: Shutting down executor, which involves waiting for running tasks to complete
+1706278741.437049 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.executors.threads:76 shutdown DEBUG: Done with executor shutdown
+1706278741.437083 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1230 cleanup INFO: Shut down executor threads
+1706278741.437119 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1228 cleanup INFO: Shutting down executor _parsl_internal
+1706278741.437151 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.executors.threads:74 shutdown DEBUG: Shutting down executor, which involves waiting for running tasks to complete
+1706278741.437186 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.executors.threads:76 shutdown DEBUG: Done with executor shutdown
+1706278741.437219 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1230 cleanup INFO: Shut down executor _parsl_internal
+1706278741.437252 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1232 cleanup INFO: Terminated executors
+1706278741.437289 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.dataflow.dflow:1249 cleanup INFO: DFK cleanup complete
+1706278741.437325 2024-01-26 11:19:01 MainProcess-8516 MainThread-139682114574144 parsl.process_loggers:28 wrapped DEBUG: Normal ending for cleanup on thread MainThread

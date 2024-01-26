@@ -1,0 +1,3 @@
+--> executable follows <--
+cat random-0.txt random-1.txt random-2.txt random-3.txt random-4.txt >> all.txt
+--> end executable <--

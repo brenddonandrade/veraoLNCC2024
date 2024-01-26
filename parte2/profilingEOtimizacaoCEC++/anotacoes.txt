@@ -1,0 +1,41 @@
+
+
+	Profiling	
+		O que e?
+			Analisa o comportament da execucao de um programa
+				- Quantas vezes cada funcao foi chamada
+				- Quanto cada funcao consome de tempo
+				- Qual funcao chamou qual
+				- Consumo de memoria
+
+	Tipos de Profiling
+		Flat Profile
+			Quanto tempo o programa gasta em cada funcao?
+		
+		Call Graph
+			Qual funcao chamou qual funcao e quantas vezes
+		
+		Code Coverage
+			Quantas vezes cada linha do codigo foi executada?
+
+		
+	Profiling (gprof)
+		- Flat Profile e Call Graph
+		- E necessario compilar com -g e -pg
+		- gcc -g -pg matmul.c
+		- ./a.out 1000
+		- gprof a.out
+
+	
+	O Principio da Localidade
+		Localidade Temporal
+	
+
+		Localidade Espacial
+
+
+	Valgrind para procurar falha de memoria de cache
+	
+
+				
+

@@ -1,0 +1,59 @@
+        -:    0:Source:matmul.c
+        -:    0:Graph:a-matmul.gcno
+        -:    0:Data:a-matmul.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdlib.h>
+        -:    2:#include <stdio.h>
+        -:    3:
+        3:    4:void matfree( double **X, int n) {
+     3003:    5:	for (int i = 0; i< n ; i++)
+     3000:    6:		free(X[i]);
+        3:    7:	free( X ) ;
+        3:    8:}
+        -:    9:
+        3:   10:double **matnew(int n) {
+        3:   11:	double ** X = (double **) malloc(sizeof(double *) *n);
+     3003:   12:	for(int i=0 ; i<n ; i++)
+     3000:   13:		X[i] = (double*) malloc(sizeof(double)*n);
+        3:   14:	return X;
+        -:   15:}
+        -:   16:
+        1:   17:void matmul(double **X, double **A, double **B, int n){
+        -:   18:
+     1001:   19:	for(int i=0; i<n ; i++){
+  1001000:   20:		for (int j =0 ; j<n ; j++) {
+  1000000:   21:			double s = 0.0;
+1001000000:   22:			for(int k=0 ; k<n ; k++)
+1000000000:   23:				s+= A[i][k] * B[k][j];
+  1000000:   24:			X[i][j] = s;
+        -:   25:		}
+        -:   26:	}
+        1:   27:}
+        -:   28:
+        1:   29:int main(int argc, char **argv){
+        1:   30:	int n = atoi(argv[1]);
+        -:   31:	
+        1:   32:	double ** X = matnew(n);
+        1:   33:	double ** A = matnew(n);
+        1:   34:	double ** B = matnew(n);
+        -:   35:	
+     1001:   36:	for (int i=0; i<n ; i++)
+  1001000:   37:		for (int j=0; j<n ; j++)
+  1000000:   38:			A[i][j] = B[i][j] = 1.0;
+        -:   39:	
+        1:   40:	matmul(X, A, B, n);
+        -:   41:
+     1001:   42:	for(int i=0; i<n ; i++){
+  1001000:   43:		for(int j=0 ; j<n ; j++)
+  1000000:   44:			printf("%.2lf", X[i][j]);
+     1000:   45:		puts("");	
+        -:   46:	}
+        -:   47:
+        -:   48:	
+        -:   49:	
+        1:   50:	matfree(X, n);
+        1:   51:	matfree(A, n);
+        1:   52:	matfree(B, n);
+        1:   53:	return 0;
+        -:   54:}
+        -:   55:		

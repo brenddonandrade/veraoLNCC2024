@@ -1,0 +1,207 @@
+1706278823.532206 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:91 __init__ INFO: Starting DataFlowKernel with config
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    executors=(ThreadPoolExecutor(
+        label='threads', 
+        max_threads=2, 
+        storage_access=None, 
+        thread_name_prefix='', 
+        working_dir=None
+    ),), 
+    garbage_collect=True, 
+    initialize_logging=True, 
+    internal_tasks_max_threads=10, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    retry_handler=None, 
+    run_dir='runinfo', 
+    strategy='simple', 
+    usage_tracking=False
+)
+1706278823.532413 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:93 __init__ INFO: Parsl version: 2024.01.22
+1706278823.532530 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.usage_tracking.usage:127 __init__ DEBUG: Tracking status: False
+1706278823.532640 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:121 __init__ INFO: Run id is: 30387fa7-327e-4745-9b27-d7b00d3c3127
+1706278823.575149 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:128 __init__ DEBUG: Considering candidate for workflow name: /home/brenddon/.local/lib/python3.12/site-packages/parsl/dataflow/dflow.py
+1706278823.575238 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:128 __init__ DEBUG: Considering candidate for workflow name: /home/brenddon/.local/lib/python3.12/site-packages/typeguard/__init__.py
+1706278823.575287 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:128 __init__ DEBUG: Considering candidate for workflow name: /home/brenddon/.local/lib/python3.12/site-packages/parsl/dataflow/dflow.py
+1706278823.575327 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:128 __init__ DEBUG: Considering candidate for workflow name: /home/brenddon/.local/lib/python3.12/site-packages/typeguard/__init__.py
+1706278823.575364 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:128 __init__ DEBUG: Considering candidate for workflow name: /home/brenddon/Documents/lncc/programaDeVerao2024/parte2/workflowsPythonParsl/conteudo/07-ParallelLoops/07_parallelloopsFiles.py
+1706278823.575402 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:134 __init__ DEBUG: Using 07_parallelloopsFiles.py as workflow name
+1706278823.575560 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.memoization:163 __init__ INFO: App caching initialized
+1706278823.575620 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.jobs.strategy:143 __init__ DEBUG: Scaling strategy: simple
+1706278823.579618 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:949 submit DEBUG: Task 0 will be sent to executor threads
+1706278823.579757 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278823.579824 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138ca17710 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt>
+1706278823.579958 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:778 _add_output_deps DEBUG: Submitting stage out for output file <File at 0x7f138ca17710 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt>
+1706278823.580280 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:161 stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.580341 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138b7fd1c0 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt>
+1706278823.580404 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:784 _add_output_deps DEBUG: No stageout dependency for <File at 0x7f138ca17710 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt>
+1706278823.580638 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <AppFuture at 0x7f138a4df110 state=pending> and file: <File at 0x7f138ca17710 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt>
+1706278823.580929 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:47 replace_task_stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.580988 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138b7fd1c0 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt>
+1706278823.581100 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1031 submit INFO: Task 0 submitted for App generate, not waiting on any dependency
+1706278823.581168 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1037 submit DEBUG: Task 0 set to pending state with AppFuture: <AppFuture at 0x7f138a4df110 state=pending>
+1706278823.581227 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.memoization:222 check_memo DEBUG: Task 0 will not be memoized
+1706278823.582066 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 0 try 0 launched on executor threads
+1706278823.582371 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:949 submit DEBUG: Task 1 will be sent to executor threads
+1706278823.582497 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278823.582575 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138bc439b0 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt>
+1706278823.582786 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:778 _add_output_deps DEBUG: Submitting stage out for output file <File at 0x7f138bc439b0 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt>
+1706278823.583186 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:161 stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.583252 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138a349400 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt>
+1706278823.583300 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:784 _add_output_deps DEBUG: No stageout dependency for <File at 0x7f138bc439b0 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt>
+1706278823.583449 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <AppFuture at 0x7f138a5de9c0 state=pending> and file: <File at 0x7f138bc439b0 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt>
+1706278823.583835 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:47 replace_task_stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.583980 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_0-139721891112640 parsl.dataflow.dflow:551 _complete_task INFO: Task 0 completed (launched -> exec_done)
+1706278823.584041 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138a349400 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt>
+1706278823.584245 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1031 submit INFO: Task 1 submitted for App generate, not waiting on any dependency
+1706278823.584308 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1037 submit DEBUG: Task 1 set to pending state with AppFuture: <AppFuture at 0x7f138a5de9c0 state=pending>
+1706278823.584456 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.memoization:222 check_memo DEBUG: Task 1 will not be memoized
+1706278823.584565 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 1 try 0 launched on executor threads
+1706278823.585498 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:949 submit DEBUG: Task 2 will be sent to executor threads
+1706278823.585697 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278823.585758 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138b067d10 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt>
+1706278823.585984 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:778 _add_output_deps DEBUG: Submitting stage out for output file <File at 0x7f138b067d10 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt>
+1706278823.586279 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:161 stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.586341 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138a348e30 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt>
+1706278823.586418 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:784 _add_output_deps DEBUG: No stageout dependency for <File at 0x7f138b067d10 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt>
+1706278823.586626 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <AppFuture at 0x7f138a348a10 state=pending> and file: <File at 0x7f138b067d10 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt>
+1706278823.587027 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:47 replace_task_stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.587160 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_0-139721891112640 parsl.dataflow.dflow:551 _complete_task INFO: Task 1 completed (launched -> exec_done)
+1706278823.587221 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138a348e30 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt>
+1706278823.587514 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1031 submit INFO: Task 2 submitted for App generate, not waiting on any dependency
+1706278823.587609 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1037 submit DEBUG: Task 2 set to pending state with AppFuture: <AppFuture at 0x7f138a348a10 state=pending>
+1706278823.587697 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.memoization:222 check_memo DEBUG: Task 2 will not be memoized
+1706278823.587791 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 2 try 0 launched on executor threads
+1706278823.588459 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:949 submit DEBUG: Task 3 will be sent to executor threads
+1706278823.588573 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278823.588649 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138b0f5340 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt>
+1706278823.588866 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:778 _add_output_deps DEBUG: Submitting stage out for output file <File at 0x7f138b0f5340 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt>
+1706278823.589172 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:161 stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.589234 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138a348ef0 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt>
+1706278823.589280 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:784 _add_output_deps DEBUG: No stageout dependency for <File at 0x7f138b0f5340 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt>
+1706278823.589421 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <AppFuture at 0x7f138a349370 state=pending> and file: <File at 0x7f138b0f5340 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt>
+1706278823.589709 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:47 replace_task_stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.589770 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138a348ef0 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt>
+1706278823.589825 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1031 submit INFO: Task 3 submitted for App generate, not waiting on any dependency
+1706278823.589882 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1037 submit DEBUG: Task 3 set to pending state with AppFuture: <AppFuture at 0x7f138a349370 state=pending>
+1706278823.589930 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.memoization:222 check_memo DEBUG: Task 3 will not be memoized
+1706278823.590139 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_0-139721891112640 parsl.dataflow.dflow:551 _complete_task INFO: Task 2 completed (launched -> exec_done)
+1706278823.590709 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 3 try 0 launched on executor threads
+1706278823.591074 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:949 submit DEBUG: Task 4 will be sent to executor threads
+1706278823.591204 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278823.591305 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138a349940 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt>
+1706278823.591893 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:778 _add_output_deps DEBUG: Submitting stage out for output file <File at 0x7f138a349940 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt>
+1706278823.592369 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:161 stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.592459 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a4e0 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt>
+1706278823.592541 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:784 _add_output_deps DEBUG: No stageout dependency for <File at 0x7f138a349940 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt>
+1706278823.592837 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <AppFuture at 0x7f138a349a00 state=pending> and file: <File at 0x7f138a349940 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt>
+1706278823.593128 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:47 replace_task_stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.593190 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a4e0 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt>
+1706278823.593290 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_0-139721891112640 parsl.dataflow.dflow:551 _complete_task INFO: Task 3 completed (launched -> exec_done)
+1706278823.593381 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1031 submit INFO: Task 4 submitted for App generate, not waiting on any dependency
+1706278823.593682 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1037 submit DEBUG: Task 4 set to pending state with AppFuture: <AppFuture at 0x7f138a349a00 state=pending>
+1706278823.593773 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.memoization:222 check_memo DEBUG: Task 4 will not be memoized
+1706278823.593884 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 4 try 0 launched on executor threads
+1706278823.594192 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:949 submit DEBUG: Task 5 will be sent to executor threads
+1706278823.594952 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138ca17710 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt>
+1706278823.595439 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <parsl.app.futures.DataFuture object at 0x7f138a944c50 representing <File at 0x7f138ca17710 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt> done> and file: <File at 0x7f138a349d30 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt>
+1706278823.596008 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:129 stage_in DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.596139 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a349d30 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt>
+1706278823.596523 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:88 replace_task DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.596615 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a349d30 url=random-0.txt scheme=file netloc= path=random-0.txt filename=random-0.txt>
+1706278823.596700 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138bc439b0 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt>
+1706278823.597053 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <parsl.app.futures.DataFuture object at 0x7f138a3494c0 representing <File at 0x7f138bc439b0 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt> done> and file: <File at 0x7f138a34a150 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt>
+1706278823.597479 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:129 stage_in DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.597566 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a150 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt>
+1706278823.597948 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:88 replace_task DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.598054 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_1-139721882719936 parsl.dataflow.dflow:551 _complete_task INFO: Task 4 completed (launched -> exec_done)
+1706278823.598118 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a150 url=random-1.txt scheme=file netloc= path=random-1.txt filename=random-1.txt>
+1706278823.598302 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138b067d10 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt>
+1706278823.598641 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <parsl.app.futures.DataFuture object at 0x7f138a349880 representing <File at 0x7f138b067d10 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt> done> and file: <File at 0x7f138a34a1e0 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt>
+1706278823.599041 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:129 stage_in DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.599099 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a1e0 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt>
+1706278823.599330 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:88 replace_task DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.599385 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a1e0 url=random-2.txt scheme=file netloc= path=random-2.txt filename=random-2.txt>
+1706278823.599431 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138b0f5340 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt>
+1706278823.599695 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <parsl.app.futures.DataFuture object at 0x7f138a349d60 representing <File at 0x7f138b0f5340 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt> done> and file: <File at 0x7f138a34a0c0 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt>
+1706278823.599975 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:129 stage_in DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.600031 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a0c0 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt>
+1706278823.600271 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:88 replace_task DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.600326 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a0c0 url=random-3.txt scheme=file netloc= path=random-3.txt filename=random-3.txt>
+1706278823.600370 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138a349940 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt>
+1706278823.600575 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <parsl.app.futures.DataFuture object at 0x7f138a4dd640 representing <File at 0x7f138a349940 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt> done> and file: <File at 0x7f138a348c20 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt>
+1706278823.600855 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:129 stage_in DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.600911 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a348c20 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt>
+1706278823.601136 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:88 replace_task DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.601189 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a348c20 url=random-4.txt scheme=file netloc= path=random-4.txt filename=random-4.txt>
+1706278823.601235 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278823.601291 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138b01c470 url=all.txt scheme=file netloc= path=all.txt filename=all.txt>
+1706278823.601454 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:778 _add_output_deps DEBUG: Submitting stage out for output file <File at 0x7f138b01c470 url=all.txt scheme=file netloc= path=all.txt filename=all.txt>
+1706278823.601911 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:161 stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.601996 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a390 url=all.txt scheme=file netloc= path=all.txt filename=all.txt>
+1706278823.602066 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:784 _add_output_deps DEBUG: No stageout dependency for <File at 0x7f138b01c470 url=all.txt scheme=file netloc= path=all.txt filename=all.txt>
+1706278823.602308 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <AppFuture at 0x7f138a3499d0 state=pending> and file: <File at 0x7f138b01c470 url=all.txt scheme=file netloc= path=all.txt filename=all.txt>
+1706278823.602791 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:47 replace_task_stage_out DEBUG: stage_out checking Staging provider NoOpFileStaging()
+1706278823.602881 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:17 can_stage_out DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a390 url=all.txt scheme=file netloc= path=all.txt filename=all.txt>
+1706278823.602997 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1031 submit INFO: Task 5 submitted for App concat, waiting on task 0, task 1, task 2, task 3, task 4
+1706278823.603191 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1037 submit DEBUG: Task 5 set to pending state with AppFuture: <AppFuture at 0x7f138a3499d0 state=pending>
+1706278823.603403 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.memoization:222 check_memo DEBUG: Task 5 will not be memoized
+1706278823.603602 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 5 try 0 launched on executor threads
+1706278823.604214 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1394 _log_std_streams INFO: Standard output for task 5 available at stdout.txt
+1706278823.604389 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1396 _log_std_streams INFO: Standard error for task 5 available at stderr.txt
+1706278823.605025 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:610 launch_if_ready DEBUG: Task 5 is not pending, so launch_if_ready skipping
+1706278823.605150 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:610 launch_if_ready DEBUG: Task 5 is not pending, so launch_if_ready skipping
+1706278823.605310 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:610 launch_if_ready DEBUG: Task 5 is not pending, so launch_if_ready skipping
+1706278823.605874 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:610 launch_if_ready DEBUG: Task 5 is not pending, so launch_if_ready skipping
+1706278823.605969 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:610 launch_if_ready DEBUG: Task 5 is not pending, so launch_if_ready skipping
+1706278823.606067 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:949 submit DEBUG: Task 6 will be sent to executor threads
+1706278823.606186 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.files:55 cleancopy DEBUG: Making clean copy of File object <File at 0x7f138b01c470 url=all.txt scheme=file netloc= path=all.txt filename=all.txt>
+1706278823.606586 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.app.futures:64 __init__ DEBUG: Creating DataFuture with parent: <parsl.app.futures.DataFuture object at 0x7f138a349bb0 representing <File at 0x7f138b01c470 url=all.txt scheme=file netloc= path=all.txt filename=all.txt> not done> and file: <File at 0x7f138a34a750 url=all.txt scheme=file netloc= path=all.txt filename=all.txt>
+1706278823.607107 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:129 stage_in DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.607224 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a750 url=all.txt scheme=file netloc= path=all.txt filename=all.txt>
+1706278823.608107 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.data_manager:88 replace_task DEBUG: stage_in checking Staging provider NoOpFileStaging()
+1706278823.608333 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.data_provider.file_noop:13 can_stage_in DEBUG: NoOpFileStaging checking file <File at 0x7f138a34a750 url=all.txt scheme=file netloc= path=all.txt filename=all.txt>
+1706278823.608491 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:764 _add_output_deps DEBUG: Adding output dependencies
+1706278823.608644 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1031 submit INFO: Task 6 submitted for App total, waiting on task 5
+1706278823.608814 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1037 submit DEBUG: Task 6 set to pending state with AppFuture: <AppFuture at 0x7f138a349f40 state=pending>
+1706278823.608923 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:614 launch_if_ready DEBUG: Task 6 has outstanding dependencies, so launch_if_ready skipping
+1706278823.611052 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_0-139721891112640 parsl.dataflow.dflow:551 _complete_task INFO: Task 5 completed (launched -> exec_done)
+1706278823.611192 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_0-139721891112640 parsl.dataflow.memoization:222 check_memo DEBUG: Task 6 will not be memoized
+1706278823.611314 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_0-139721891112640 parsl.dataflow.dflow:727 launch_task INFO: Parsl task 6 try 0 launched on executor threads
+1706278823.611425 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_0-139721891112640 parsl.dataflow.dflow:1394 _log_std_streams INFO: Standard output for task 5 available at stdout.txt
+1706278823.611484 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_0-139721891112640 parsl.dataflow.dflow:1396 _log_std_streams INFO: Standard error for task 5 available at stderr.txt
+1706278823.611794 2024-01-26 11:20:23 MainProcess-8578 ThreadPoolExecutor-0_1-139721882719936 parsl.dataflow.dflow:551 _complete_task INFO: Task 6 completed (launched -> exec_done)
+1706278823.612203 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1145 atexit_cleanup INFO: DFK cleanup because python process is exiting
+1706278823.612324 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1182 cleanup INFO: DFK cleanup initiated
+1706278823.612390 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1075 log_task_states INFO: Summary of tasks in DFK:
+1706278823.612473 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.unsched: 0
+1706278823.612539 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.pending: 0
+1706278823.612599 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.running: 0
+1706278823.612658 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.exec_done: 7
+1706278823.612722 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.failed: 0
+1706278823.612760 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.dep_fail: 0
+1706278823.612795 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.launched: 0
+1706278823.612830 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.fail_retryable: 0
+1706278823.612865 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.memo_done: 0
+1706278823.612920 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.joining: 0
+1706278823.612956 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1079 log_task_states INFO: Tasks in state States.running_ended: 0
+1706278823.612990 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1081 log_task_states INFO: End of summary
+1706278823.613061 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1206 cleanup INFO: Closing job status poller
+1706278823.613198 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1208 cleanup INFO: Terminated job status poller
+1706278823.613241 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1210 cleanup INFO: Scaling in and shutting down executors
+1706278823.613283 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1228 cleanup INFO: Shutting down executor threads
+1706278823.613327 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.executors.threads:74 shutdown DEBUG: Shutting down executor, which involves waiting for running tasks to complete
+1706278823.613393 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.executors.threads:76 shutdown DEBUG: Done with executor shutdown
+1706278823.613449 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1230 cleanup INFO: Shut down executor threads
+1706278823.613511 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1228 cleanup INFO: Shutting down executor _parsl_internal
+1706278823.613565 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.executors.threads:74 shutdown DEBUG: Shutting down executor, which involves waiting for running tasks to complete
+1706278823.613629 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.executors.threads:76 shutdown DEBUG: Done with executor shutdown
+1706278823.613699 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1230 cleanup INFO: Shut down executor _parsl_internal
+1706278823.613759 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1232 cleanup INFO: Terminated executors
+1706278823.613822 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.dataflow.dflow:1249 cleanup INFO: DFK cleanup complete
+1706278823.613884 2024-01-26 11:20:23 MainProcess-8578 MainThread-139721951688512 parsl.process_loggers:28 wrapped DEBUG: Normal ending for cleanup on thread MainThread
