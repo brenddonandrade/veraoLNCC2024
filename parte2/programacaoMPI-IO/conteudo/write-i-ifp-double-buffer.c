@@ -20,21 +20,27 @@ int main(int argc, char *argv[]) {
 
 	// Function to Open the file - HINT: verify the access modes
 	// TO-DO
-
+	r = MPI_File_open( MPI_COMM_WORLD, "write-i-ifp-double-buffer.data", MPI_MODE_WRONLY, MPI_INFO_NULL, &fh);
+	
 	// Fill the buffer - HINT: Rebember, it's in double value!
 	int i=0;
 	for (i=0; i<BUFFER_SIZE; i++) {
 		// TO-DO
+		buffer[i] = myrank + (double)i/BUFFER_SIZE;
 	}
 
 	// Set a displacement of the buffer size for each process based on its rank - HINT: Use the function to change the file view
 	// TO-DO
+	MPI_File_set_view(fh, myrank * BUFFER_SIZE * sizeof(double) , MPI_DOUBLE, MPI_DOUBLE, "native", MPI_INFO_NULL);
 
 	// Function to Write with individual file pointer the entire buffer at once
 	// TO-DO
+	MPI_File_write(fh, &buffer, BUFFER_SIZE, MPI_DOUBLE, &s);
 
 	// Function to Close the file
 	// TO-DO
+	MPI_File_close(&fh);	
+
 
 	MPI_Finalize();
 

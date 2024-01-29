@@ -1,0 +1,133 @@
+Curso - Introducao ao CUDA
+	Topicos:
+		- Introducao
+		- Arquitetura das GPU
+		- Introducao à CUDA		
+			- Computacao heterogênea
+			- Blocos, threds e indexacao (estrutura de um programa cuda)
+			- Memoria compartilhada
+			- Gerenciamento de erros e dispositivo
+		
+
+	Introducao: CUDA
+		CUDA (Compute Unified Device Architecture) é uma plataforma de computacao paralela da NVIDIA para aproveitar o poder de processamento das GPUs em aplicacoes de proprósito geral além de gráficos
+
+		Inclui uma API que permite aos programadores escrevem codigo em C, C++ e Fortran
+
+		
+		Introducao: GPGPU
+			- General Purpose Graphics Processing Unit
+			- Paralelismo massivo: muitas uindades SIMD (Single Instruction Multiplo Data)
+			Exemplo: GeForce RTX 3090 (2022)
+				- Arquitetura Ampere
+				- 82 SM x 128 Nucloes CUDA por SM = 10.496 cores CUDA
+				- Estimativa de desempenho: 35,58 TFLOPs
+				- Estimativa de preco(2022): U$1499,00
+				- Custo por teraflop: $42,08 USD
+
+		GPU = Aceleradores em computacao
+		
+
+		Princípios da arquitetura interna
+			CPU: execucao de uma sequência de operacoes (thread) o mais rápido possível; pode executar algumas dezenas desses threads em paralelo
+			
+			GPU: projetada para se destacar a execucao de milhares de threads em paralelo (amortizando o desempenho de thread único mais lento para obter maior rendimento)
+		
+		
+		Diferenca entre processo e thread
+			Sao entidades de sistemas operacionais.
+			O sistema operacional gerencia diversos processos. Cada processo é algo sendo executado no sistema operacional. Cada processo tem um pedaco de tempo para cada processo. Podemos ter mais processos que threads e o processo pode ou nao usar mais de uma thread.
+
+			
+		Arquitetura das GPUs
+			- Programa principal executa na CPU (host) e inicia as threads na GPU (device)
+			- Tem sua propria hierarquia de memória e os dados sao transferidos através de um barramento PCI experess (fonte de gargalo)
+			
+		
+		Vamos ver melhor: Kepler, Pascal e Volta (todos físicos) (arquiteturas)
+		
+		
+		Arquitetura Kepler
+			- Até 15 SMX (streaming Multiprocessor) com 192 nucleos cada
+				- 2880 cores
+			- Paralelismo Dinâmico - uma funcao pode criar novas funcoes (antes so a CPU fazia isto)
+			- Hyper-Q possibilida disparar kernels (funcoes que executam dentro da GPU) simultaneamente
+			- 192 núcleos de precisão simples (mais paralelismo)
+			- 64 unidades de precisão dupla (menos paralelismo)
+			- 32 SFUs (unidades e processamento de funcoes matematicas mais sofisticadas
+			- 32 unidades de load/store (trazer dados e armazenar dados na memoria principal)
+			- 4 warps concorrentes (warps - grupos de threads que sao executados simultaneamente em um processo de streaming (SM ou SMX)
+			- Cada warp contém um número fixo de geralmente 32 threads
+			- Dentro de um warp, todas as threads executam a mesma instrucao ao mesmo tempo, mas em diferentes conjuntos de dados
+			- Isso é conhecido como execucao SIMD, onde a mesma instrucao é aplicada a múltiplos dados simultaneamente.
+			
+
+		Arquitetura Pascal
+			- Até 60 SMs com 64 cores cada
+				- total de 3840
+			- 16 GB de memória
+			- Interconexão NVLink
+				- comunicacao com sistema de memória
+			- Registradores -  dados que estao sendo acessados no momento
+			- compartilhados por todas as threads no SM
+			- maior concorrência
+			
+
+		Compute Capability
+			- compute capability de um dispositivo descreve sua arquitetura, por exemplo:
+				- número de registradores
+				- tamanho das memórias
+				- quantidade de core por SM
+				- paralelismo máximo
+				- etc
+				https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html?highlight=capability#features-and-technical-specifications
+	
+		Tensor cores
+			Os núcleos tensores podem executar várias operacoes por ciclo de clock
+				- os nucleos CUDA (cores) executam uma operacao por ciclo de clock
+			- A precisao pode ser alterada para aumentar a velocidade de computacao
+			- A Nvidia criou essa tecnologia quando lancou GPUs baseadas na arquitetura Volta(2017)
+			
+		
+		Volta GV100 GPU com 84 SM
+			sao 6 GPU Processing Clusters (GPCs)
+			Cada GPC possui:
+				- 7 texture Processing Clusters (TPCs)
+					- cada TPC possui 2 SMs
+					- 14 SMs	
+			
+			No total, são 84 Volta SMs, onde cada possui:
+				- 64 FP32 cores
+				- 64 INT32 cores
+				- 32 FP64 cores
+				- 8 Tensor Cores
+				
+	Memória Unificada
+		- Disponível a partir de CUDA 6
+		- A memória pode ser gerenciada automaticamente a partir de um ponteiro alocado na CPU
+			- transferência automáticas (veremos mais tarde)
+		A partir da Pascal foi limitado ao tamanho da memória do sistema (RAM)
+		
+	
+	Arquitetura CUDA
+		- Possibilita paralelismo na GPU para computação de propósito geral
+		- CUDA C/C++
+			- Baseado no padrao C/C++
+			- Pequeno conjunto de extensões para permitir programacao heterogenea
+			- API para  gerenciamento de dispositivos, memória, etc
+
+		- Conceitos
+			- Computacao Heterogênea (usando CPU e GPU)
+				Termonologia
+					- Host:CPU e sua memoria
+					- Device: GPU e sua memoria
+			
+			- Fluxo de processamento
+				CPU - (PCI - Bus [barramento que conecta as duas]) - GPU
+				Os dados vao para GPU e depois voltam para CPU
+				CPU Memory -> DRAM (GPU) -> cache (GPU) -> DRAM (GPU) -> CPU memory		
+				
+		- O professor da Federal de Viçosa tem um curso na net sobre. Procurar depois.
+		
+
+			

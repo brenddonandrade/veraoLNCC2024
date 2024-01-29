@@ -18,21 +18,26 @@ int main(int argc, char *argv[]) {
 
 	// Function to Open the file - HINT: verify the access modes
 	// TO-DO
+	r = MPI_File_open(MPI_COMM_WORLD, "my-rank.txt", MPI_MODE_RDONLY, MPI_INFO_NULL, &fh);
 
+	
 	int i=0;
 	for (i=0; i<10; i++) {
 		// Calculates the offset - HINT: offset = Position in the file expressed as a count of etypes
 		// TO-DO
+		offset = (myrank + (i * size)) * sizeof(MPI_CHAR); 
 
 		// Function to Read the character at the defined offset - HINT: remember the MPI predefined or derived etypes
 		// TO-DO
+		MPI_File_read_at(fh, offset, &read_my_rank, 1, MPI_CHAR, &s); 
 
 		// Print the rank, offset, and value
-		// TO-DO
+		printf("rank: %d, offset: %d, read: %c\n",myrank, offset, read_my_rank); 
 	}
 
 	// Function to Close the file
 	// TO-DO
+	MPI_File_close(&fh);
 
 	MPI_Finalize();
 
